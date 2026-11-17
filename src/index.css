@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import "@fontsource/dm-sans/latin-400.css";
+@import "@fontsource/dm-sans/latin-500.css";
+@import "@fontsource/dm-sans/latin-700.css";
+
+/*
+ * Brand tokens — sampled from public/recursos/Icono.png
+ *   brand-blue  #003399  (parallelogram + top of the "P")
+ *   brand-gray  #E7E7E8  (the "P" + diagonal stripes)
+ *   brand-white #FFFFFF  (outlines)
+ * Tints/shades are mixes of those three with black/white only.
+ */
+@theme {
+  --color-brand-blue: #003399;
+  --color-brand-gray: #e7e7e8;
+  --color-brand-white: #ffffff;
+
+  --color-navy-950: #000f2e; /* blue 30% (shade) */
+  --color-navy-900: #001a4d; /* blue 50% */
+  --color-navy-800: #00266f; /* blue 75% */
+  --color-blue-600: #1a47a3; /* blue + 10% white */
+  --color-blue-400: #6685c2; /* blue + 40% white */
+  --color-blue-200: #b3c2e0; /* blue + 70% white */
+  --color-blue-50: #f2f5fa; /* blue + 95% white */
+  --color-gray-100: #f3f3f4; /* gray tint */
+  --color-gray-400: #a9a9ab; /* gray shade */
+  --color-ink: #0b1630; /* body text on light (15.9:1 on white) */
+  --color-ink-muted: #44506a; /* 8.2:1 on white, 7.3:1 on gray-100 */
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-blue-400);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--color-brand-blue);
+    color: var(--color-brand-white);
+  }
+}
+
+/* Logo motif: parallelogram */
+@utility skew-brand {
+  transform: skewX(-14deg);
+}
+@utility unskew-brand {
+  transform: skewX(14deg);
+}
+@utility clip-para {
+  clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%);
+}
+@utility clip-cut-b {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
+}
+/* Logo motif: diagonal stripes */
+@utility stripes {
+  background-image: repeating-linear-gradient(
+    -60deg,
+    currentColor 0 3px,
+    transparent 3px 9px
+  );
+}
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+@utility section-anchor-offset {
+  scroll-margin-top: 5rem;
+}
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reveal: hidden only when JS + motion are available; GSAP animates transform/opacity */
+.motion-ok [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

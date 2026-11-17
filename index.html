@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/recursos/Icono.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000F2E" />
+    <meta
+      name="description"
+      content="Transpubenza (Popayán) — análisis de datos, KPI operativos y dashboard Power BI del transporte público. Proyecto final Electiva III — Análisis de Datos."
+    />
+    <meta property="og:title" content="Transpubenza | Informe de métricas" />
+    <meta property="og:description" content="Análisis, KPI y dashboard Power BI de Transpubenza, Popayán." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/recursos/Bus2.jpg" />
+    <title>Transpubenza | Informe de métricas</title>
+    <!-- Priority Hints: LCP image (hero bus photo) -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      href="/recursos/opt/Bus2-400.avif"
+      imagesrcset="/recursos/opt/Bus2-400.avif 400w, /recursos/opt/Bus2-516.avif 516w"
+      imagesizes="(min-width: 1024px) 480px, 86vw"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" type="image/webp" href="/recursos/opt/Icono-96.webp" />
+    <script>
+      document.documentElement.classList.add("js");
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+        document.documentElement.classList.add("motion-ok");
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
