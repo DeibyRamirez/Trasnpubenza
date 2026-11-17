@@ -155,10 +155,25 @@ export const reportSection = {
     "Tablero interactivo con métricas claras de la empresa. Use filtros dentro del informe para profundizar por periodo, ruta o categoría.",
 };
 
+export const developers = [
+  {
+    name: "Deiby Alejandro Ramírez Galvis",
+    email: "deibyalejandroramirez13@gmail.com",
+    github: "https://github.com/DeibyRamirez",
+    githubHandle: "DeibyRamirez",
+  },
+  {
+    name: "David Urrutia Cerón",
+    email: "davidurrtiaceron200507@gmail.com",
+    github: "https://github.com/BICHO128",
+    githubHandle: "BICHO128",
+  },
+];
+
 export const footerContent = {
   company: "Transpubenza",
   project: "Electiva III — Análisis de Datos",
-  team: "Equipo académico (actualizar nombres)",
+  team: "Desarrolladores del proyecto",
   year: new Date().getFullYear(),
 };
 
