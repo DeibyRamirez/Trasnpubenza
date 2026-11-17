@@ -164,7 +164,7 @@ export const developers = [
   },
   {
     name: "David Urrutia Cerón",
-    email: "davidurrtiaceron200507@gmail.com",
+    email: "davidurrutiaceron200507@gmail.com",
     github: "https://github.com/BICHO128",
     githubHandle: "BICHO128",
   },
